@@ -1,1 +1,39 @@
-<p>form2 works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" required />
+  </div>
+  <div class="mb-3">
+    <label for="alterEgo" class="form-label">AlterEgo</label>
+    <input type="text" class="form-control" id="alterEgo" required />
+  </div>
+  <div class="mb-3">
+    <label for="power" class="form-label">Powers</label>
+    <select class="form-select form-control" id="power">
+      <option selected>---</option>
+      <option value="1">Invisibilita</option>
+      <option value="2">Immortalita</option>
+      <option value="3">Respirare sott'acqua</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="enemy" class="form-label">Enemy</label>
+    <input type="text" class="form-control" id="enemy" maxlength="10" />
+  </div>
+  <div class="mb-3">
+    <label for="planet" class="form-label">Planet</label>
+    <input
+      type="text"
+      class="form-control"
+      id="planet"
+      required
+      minlength="5"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="weakness" class="form-label">Weakness</label>
+    <input type="text" class="form-control" id="weakness" />
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

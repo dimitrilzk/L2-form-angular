@@ -1,1 +1,97 @@
-<p>form1 works!</p>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input
+      type="text"
+      name="name"
+      ngModel
+      #name="ngModel"
+      class="form-control"
+      id="name"
+      required
+    />
+    <div
+      *ngIf="name.invalid && name.touched"
+      class="alert alert-danger"
+      role="alert"
+    >
+      Questo campo è obbligatorio!
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="alterEgo" class="form-label">AlterEgo</label>
+    <input
+      type="text"
+      name="alterEgo"
+      ngModel
+      #alterEgo="ngModel"
+      class="form-control"
+      id="name"
+      required
+    />
+    <div
+      *ngIf="alterEgo.invalid && alterEgo.touched"
+      class="alert alert-danger"
+      role="alert"
+    >
+      Questo campo è obbligatorio!
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="power" class="form-label">Powers</label>
+    <select
+      name="power"
+      ngModel
+      #power="ngModel"
+      class="form-select form-control"
+      id="power"
+    >
+      <option *ngFor="let item of powers" [value]="item">{{ item }}</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="enemy" class="form-label">Enemy</label>
+    <input
+      type="text"
+      name="enemy"
+      ngModel
+      #enemy="ngModel"
+      class="form-control"
+      id="name"
+      maxlength="10"
+    />
+    <div
+      *ngIf="enemy.invalid && enemy.touched"
+      class="alert alert-danger"
+      role="alert"
+    >
+      Puoi inserire massimo 10 caratteri!
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="planet" class="form-label">Planet</label>
+    <input
+      type="text"
+      name="planet"
+      ngModel
+      #planet="ngModel"
+      class="form-control"
+      id="name"
+      required
+      minlength="5"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="weakness" class="form-label">Weakness</label>
+    <input
+      type="text"
+      name="weakness"
+      ngModel
+      #weakness="ngModel"
+      class="form-control"
+      id="name"
+    />
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
